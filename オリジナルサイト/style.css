@@ -1,0 +1,475 @@
+@charset "UTF-8";
+
+/* base */
+/* --------------------------------- */
+html{color:#fff;background:#000}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+*{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+	box-sizing: border-box;
+}
+
+body{
+  line-height: 1.8;
+  min-width: 1140px;
+  background-color: #000;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  transition: .3s;
+}
+
+a:hover{
+  opacity: .7;
+  transition: .3s;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+/* module */
+/* --------------------------------- */
+.page-title {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50pt;
+  margin: 50px 0 50px;
+
+  color: #fff;
+  font-size: 100px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 10px 0 0;
+  text-shadow:
+  1px 1px #aaa,
+  2px 2px #999,
+  3px 3px #888,
+  4px 4px #777,
+  5px 5px #666,
+  6px 6px #99FFFF,
+  7px 7px 4px #000;
+}
+a.btn-border {
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #99FFFF;
+}
+
+a.btn-border:hover {
+  -color: #fff;
+  background: #AA0000;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin: 70px;
+}
+
+.detail {
+  text-align: center;
+  margin: 40px 0 40px;
+}
+
+.fadein {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 300ms;
+}
+.fadein.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+/* header */
+/* --------------------------------- */
+.header-nav {
+  display: flex;
+  height: 100px;
+}
+
+.header-nav-list{ 
+  display: flex;
+  margin: 0 auto;
+}
+
+.header-nav-item {
+  font-weight: bold;
+  margin-right: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+-.header-nav-item a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+-.header-nav-item a::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+-.header-nav-item a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+
+/* index.html*/
+/* --------------------------------- */
+
+.main-visual-img{
+  height: 700px;
+}
+
+.header {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  padding: 0 30px;
+  border-bottom: 1px solid #99FFFF;
+  background-color: #000;
+  color: #fff;
+}
+
+.header-logo {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.neon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0 20px;
+  font-size: 100px;
+  color: #fff;
+  text-shadow: 0 0 50px #fb8b24;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.neon:after{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  z-index: -1;
+  color: #AA0000;
+  filter: blur(15px);
+}
+
+.neon:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #AA0000;
+  z-index: -2;
+  opacity: .3;
+  filter: blur(50px);
+}
+
+
+.discography {
+  -background-color: #333333;
+}
+
+.section-title {
+  background-color: #333333;
+}
+
+.video-iframe {
+  height: 700px;
+  width: 1000px;
+}
+
+.video-box {
+  text-align: center;
+  height: 625px;
+}
+
+.inside-wrapper {
+  text-align: center;
+}
+
+.profile-title {
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+
+/* PROFILE.html*/
+/* --------------------------------- */
+.profile-main-visual {
+  background-color: #000;
+  text-align: center;
+}
+
+
+.profile-main-visual-img{
+  width: 1000px;
+  height: 600px;
+}
+
+.intro-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  margin-bottom: 23px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.group-intro {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.intro-title{
+  margin: 50px;
+}
+
+.member-list {
+  margin: 50px 100px 100px 200px;
+}
+
+.member-list-ul {
+ -webkit-box-pack: justify;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: justify;
+    
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.member-wrapper {
+  text-align: center;
+}
+
+/* discography */
+/* --------------------------------- */
+.album-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 50px;
+  font-size: 15pt;
+}
+
+.album-img {
+  height: 500px;
+  width: 500px;
+  box-shadow: 0 0 8px gray;
+}
+
+.album-font {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.single-wrapper {
+  align-items: center;
+  padding: 100px 0 100px;
+  margin: 0 100px 0 100px;
+}
+
+.single-img {
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 8px gray;
+  margin: 50px 50px 0 50px;
+}
+
+.single-ul {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.single-font {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.description {
+  text-align: center;
+}
+
+.single-intro {
+  padding: 20px 0 20px;
+}
+
+.name h3 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* video */
+/* --------------------------------- */
+
+.movie_content_wrap {
+	position: relative;
+	width: 40%;
+	height: 100%;
+	padding-top: 56.25%;
+	margin: -10% 0 -10%;
+}
+
+.movie_content_wrap iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+
+-.movie_list_1 {
+  display: flex;
+  justify-content: space-evenly;
+  height: 470px;
+  margin-top: 70px;
+}
+
+-.movie_list_2 {
+  display: flex;
+  justify-content: space-evenly;
+  height: 570px;
+}
+
+.movie_list_ul {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-evenly;
+  height: 30%;
+  margin-top: 20%;
+}
+
+/* footer */
+/* --------------------------------- */
+.footer {
+  color: #fff;
+  background-color: #000;
+  display: block;
+  height: auto;
+  border-top: 1px solid #99FFFF;
+}
+
+.footer-nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 0 400px;
+}
+
+.footer-nav-item{
+  font-weight: bold;
+}
+
+.footer-contact {
+  text-align: center;
+  height: 60px;
+}
+
+.contact-btn {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: #fff;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #AA0000	, 0px 2px 0px #AA0000, 0px 3px 0px #AA0000;
+}
+
+.ontact-btn:hover {
+   top: 4px;
+  text-shadow: none;
+}
+
+
+/* page-top */
+/* --------------------------------- */
+
+.scrollTop {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+}
+ 
+.scrollTop a {
+    font-size: 18px;
+    color: #fff;
+    background: #AA0000;
+    padding: 20px;
+           
+}
+.scrollTop a:hover{
+        background: #99FFFF;
+}
